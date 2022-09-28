@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+int main(int argc, char *argv[])
+{
+	unsigned char buffer[4];
+	sprintf(buffer, "%dd", atoi(argv[1]));
+	execlp("sed", "sed", "-i", buffer, argv[2], NULL);
+}
